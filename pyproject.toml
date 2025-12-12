@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "minecraft-support-bot"
+version = "0.1.0"
+description = "Enterprise Support Bot for Minecraft E-commerce using LangGraph"
+authors = ["Envigite <benjacontrerasma@yahoo.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# --- Core Web & Async ---
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+pydantic = "^2.6.0"
+pydantic-settings = "^2.1.0"
+
+# --- Database (ORM & Drivers) ---
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"        # Driver Async para nuestra App
+psycopg = {extras = ["binary", "pool"], version = "^3.1.18"} # Requerido por langgraph-postgres
+
+# --- AI & Orchestration ---
+langchain = "^0.1.0"
+langgraph = "^0.0.24"      # El orquestador
+langchain-openai = "^0.0.5"
+langchain-anthropic = "^0.1.1"
+langchain-core = "^0.1.10"
+
+# --- Vector DB ---
+pinecone-client = "^3.0.0"
+
+# --- Utils ---
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
